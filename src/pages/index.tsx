@@ -1,15 +1,28 @@
 import React from 'react';
 
-import About from '../components/About';
-import Analytics from '../components/Analytics';
-import Canvas from '../components/Canvas';
-import Features from '../components/Features';
 import Header from '../components/Header';
-import LazyShow from '../components/LazyShow';
 import MainHero from '../components/MainHero';
 import MainHeroImage from '../components/MainHeroImage';
-import Pricing from '../components/Pricing';
-import Product from '../components/Product';
+
+const Feature = ({ title, children }) => (
+  <div>
+    <h3>{title}</h3>
+    <p>{children}</p>
+  </div>
+);
+
+const TimelineItem = ({ time, heading, children }) => (
+  <li className="mb-10 ml-4">
+    <div className="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+      {time}
+    </time>
+    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+      {heading}
+    </h3>
+    {children}
+  </li>
+);
 
 const App = () => {
   return (
@@ -25,7 +38,7 @@ const App = () => {
         </div>
         <MainHeroImage />
       </div>
-      <section className="max-w-7xl mx-auto px-5 lg:px-7 py-6 sticky-section">
+      <section className="sticky-section">
         <div>
           <h2>What is Halluce?</h2>
         </div>
@@ -69,28 +82,82 @@ const App = () => {
           <a href="">Read our Viral Paper (White Paper) for more on Halluce.</a>
         </article>
       </section>
-      <LazyShow>
-        <>
-          <Product />
-          <Canvas />
-        </>
-      </LazyShow>
-      <LazyShow>
-        <>
-          <Features />
-          <Canvas />
-        </>
-      </LazyShow>
-      <LazyShow>
-        <Pricing />
-      </LazyShow>
-      <LazyShow>
-        <>
-          <Canvas />
-          <About />
-        </>
-      </LazyShow>
-      <Analytics />
+      <section className="sticky-section">
+        <div>
+          <h2>Marketplace</h2>
+        </div>
+        <article>
+          <p>
+            For early access to our marketplace join our discord community and
+            complete the information below (email)
+          </p>
+        </article>
+      </section>
+      <section className="sticky-section">
+        <div>
+          <h2>Features</h2>
+        </div>
+        <article>
+          <Feature title="Three-factor verification">
+            Content security to prevent fraud and scams by ensuring that the NFT
+            creator is the owner and original inventor of the video they're
+            selling.
+          </Feature>
+          <Feature title="Internet-wide Viewership Tracking">
+            To provide the most accurate internet-wide viewership statistics,
+            Halluce utilizes cutting-edge technology and leverages its community
+            to identify and track where original videos are republished online.
+          </Feature>
+          <Feature title="Support for all major cryptocurrencies">
+            Users may purchase NFTs with almost any cryptocurrency they possess.
+          </Feature>
+          <Feature title="Automated Royalty Split">
+            Because they are also contributors, any individual who is a part of
+            the video for a decent amount of time and verbally contributes will
+            be compensated and accounted for when it comes to royalties.
+          </Feature>
+          <Feature title="Performance charts">
+            Easily understand the performance of a video since it was posted
+          </Feature>
+          <Feature title="No-Code DAO formation">
+            DAOs that can be customized by their participants without the need
+            for any code. These DAOs can be used for bidding on other platforms.
+          </Feature>
+        </article>
+      </section>
+
+      <section className="sticky-section">
+        <div>
+          <h2>Roadmap</h2>
+        </div>
+        <article>
+          <ol className="relative border-l border-gray-200 dark:border-gray-700">
+            <TimelineItem
+              time="February 2022"
+              heading="MVP - Launch on Solana to initial users"
+            />
+            <TimelineItem
+              time="Q1 2022"
+              heading="Establish Community, User Interviews, and Social Media Content Launch"
+            />
+            <TimelineItem
+              time="Q2 2022"
+              heading="Seed Round - Launch Support for all Cryptocurrencies for more users"
+            />
+            <TimelineItem
+              time="Q2 2022"
+              heading=" Branding, design, and development"
+            />
+            <TimelineItem time="Q3 2022" heading="Halluce Relaunch" />
+            <TimelineItem time="Q4 2022" heading="Series A and Halluce ICO" />
+            <TimelineItem
+              time="Q1 2023"
+              heading="NFT Marketplace Development (without Metaplex)"
+            />
+            <TimelineItem time="Q2 2023" heading="DAO formation for users" />
+          </ol>
+        </article>
+      </section>
     </div>
   );
 };
