@@ -53,10 +53,10 @@ const Menu = () => {
                   smooth={true}
                   duration={1000}
                   key={item.name}
-                  to={item.href}
+                  hre={item.href}
                   className="font-medium cursor-pointer text-gray-500 hover:text-gray-900"
                 >
-                  {item.name}
+                  <a>{item.name}</a>
                 </Link>
               ))}
               <a

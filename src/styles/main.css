@@ -50,3 +50,11 @@ h3 {
 .sticky-section h2 {
   @apply sticky top-20 text-2xl md:text-4xl lg:text-6xl;
 }
+
+
+footer h4{
+  @apply border-b border-gray-400 mb-3 pb-2 font-semibold;
+}
+footer ul ul li{
+  @apply font-light;
+}

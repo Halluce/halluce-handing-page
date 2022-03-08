@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MainHero from '../components/MainHero';
 import MainHeroImage from '../components/MainHeroImage';
@@ -26,7 +27,7 @@ const TimelineItem = ({ time, heading, children }) => (
 
 const App = () => {
   return (
-    <div className={`bg-background grid gap-y-6`}>
+    <main className={`bg-background grid gap-y-6`}>
       <div className={`relative bg-background overflow-hidden`}>
         <div className="max-w-7xl mx-auto">
           <Header />
@@ -82,7 +83,7 @@ const App = () => {
           <a href="">Read our Viral Paper (White Paper) for more on Halluce.</a>
         </article>
       </section>
-      <section className="sticky-section">
+      <section id="marketplace" className="sticky-section">
         <div>
           <h2>Marketplace</h2>
         </div>
@@ -93,7 +94,7 @@ const App = () => {
           </p>
         </article>
       </section>
-      <section className="sticky-section">
+      <section id="features" className="sticky-section">
         <div>
           <h2>Features</h2>
         </div>
@@ -126,7 +127,7 @@ const App = () => {
         </article>
       </section>
 
-      <section className="sticky-section">
+      <section id="roadmap" className="sticky-section w-full">
         <div>
           <h2>Roadmap</h2>
         </div>
@@ -158,7 +159,9 @@ const App = () => {
           </ol>
         </article>
       </section>
-    </div>
+
+      <Footer />
+    </main>
   );
 };
 
